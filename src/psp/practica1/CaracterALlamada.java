@@ -13,7 +13,7 @@ public class CaracterALlamada {
         ProcessBuilder pb;
         Process process;
 
-        if (linea != ""){
+        if (!linea.isEmpty()){
 
             String classname = "psp.practica1.NumRandom";
             String currentPath = System.getProperty("user.dir");
@@ -26,7 +26,7 @@ public class CaracterALlamada {
 
                 for (int i = 0; i < linea.length(); i++) {
 
-                    if ( !(linea.equals("Fin") || linea.equals("fin"))) {
+                    if ( !linea.toLowerCase().equals("fin")) {
                         process = pb.start();
                         process.waitFor();
 
@@ -61,7 +61,7 @@ public class CaracterALlamada {
             linea = teclado.nextLine();
             caracterALlamada.transformar(linea);
 
-        } while(!(linea.equals("Fin") || linea.equals("fin")));
+        } while(!(linea.toLowerCase().equals("fin")));
 
     }
 
